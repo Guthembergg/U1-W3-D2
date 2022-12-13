@@ -37,7 +37,7 @@ console.log(arrayPari(arrayNum));
   Scrivi una funzione per sommare i numeri contenuti in un array
 */
 console.log("----------------Esercizio 4------------------");
-arrayNum2 = [2, 4];
+arrayNum2 = [2, 4, 10];
 const functionSomma = (array) => {
   let somma = 0;
   for (let i = 0; i < array.length; i++) {
@@ -51,7 +51,7 @@ functionSomma(arrayNum2);
 */
 console.log("----------------Esercizio 5------------------");
 
-arrayNum2 = [2, 4];
+arrayNum2 = [2, 4, 6];
 const funSomma = (array) => array.reduce((acc, elemento) => acc + elemento);
 console.log(funSomma(arrayNum2));
 
@@ -59,11 +59,15 @@ console.log(funSomma(arrayNum2));
   Scrivi una funzione che, dato un array di soli numeri e un numero n come parametri, ritorni un secondo array con tutti i valori del precedente incrementati di n
 */
 console.log("----------------Esercizio 6------------------");
-arrayNum2 = [2, 4];
+arrayNum2 = [3, 4];
 const functionSomma2 = (array, n) => {
   let ar2 = [];
   for (let i = 0; i < array.length; i++) {
-    ar2.push(array[i] + n);
+    if (typeof array[i] === "number" && Number.isInteger(array[i])) {
+      ar2.push(array[i] + n);
+    } else {
+      return console.log("inserire numero");
+    }
   }
   console.log(ar2);
 };
@@ -79,7 +83,12 @@ arrayStr = ["epicode", "is", "great"];
 const functionStringa = (array) => {
   let ar2 = [];
   for (let i = 0; i < array.length; i++) {
-    ar2.push(array[i].length);
+    if (typeof array[i] === "string") {
+      ar2.push(array[i].length);
+    } else {
+      console.log("inserire stringa");
+      return;
+    }
   }
   console.log(ar2);
 };
@@ -90,7 +99,7 @@ functionStringa(arrayStr);
 
 */
 console.log("----------------Esercizio 9------------------");
-arrayStr = ["epicode", "is", "great"];
+
 const functionDispari = () => {
   arr2 = [];
   for (let i = 0; i <= 99; i++) {
